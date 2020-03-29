@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <TextView
+			android:id="@+id/activity_main_text_view_title"
+            android:layout_width="0dp"
+			android:gravity="center_vertical"
+            android:layout_height="match_parent"
+            android:layout_weight="6"/>
+        <TextView
+            android:id="@+id/text_view_options_menu"
+            android:clickable="true"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#000000"/>
+    </LinearLayout>
+    <com.cccame.texteditor.view.MyTextView
+        android:id="@+id/mtv"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="14"/>
+
+</LinearLayout>

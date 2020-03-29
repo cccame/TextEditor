@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#FFFFFF"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:background="#FFFFFF"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        
+    </LinearLayout>
+
+    <ListView
+        android:background="#FFFFFF"
+        android:id="@+id/dialog_open_file_list_view_files"
+        android:layout_width="match_parent"
+        android:layout_height="0dp" 
+        android:layout_weight="10"/>
+
+
+    <TextView
+        android:background="#FFFFFF"
+        android:id="@+id/dialog_open_file_text_view_select_file"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:maxLines="1" />
+
+    <LinearLayout
+        android:background="#FFFFFF"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <Spinner
+            android:background="#FFFFFF"
+            android:id="@+id/dialog_open_file_spinner_charset"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:spinnerMode="dropdown" />
+
+        <Button
+            android:id="@+id/dialog_open_file_button_cancel"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#FFFFFF"
+            android:text="@string/cancel"
+            android:textColor="#FF1E88E5" />
+
+        <Button
+            android:id="@+id/dialog_open_file_button_open"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#FFFFFF"
+            android:text="@string/open"
+            android:textColor="#FF1E88E5" />
+
+    </LinearLayout>
+
+</LinearLayout>
+
+

@@ -1,0 +1,6 @@
+# view AndroidManifest.xml #generated:27
+-keep class com.cccame.texteditor.MainActivity { <init>(...); }
+
+# view res/layout/activity_main.xml #generated:26
+-keep class com.cccame.texteditor.view.MyTextView { <init>(...); }
+

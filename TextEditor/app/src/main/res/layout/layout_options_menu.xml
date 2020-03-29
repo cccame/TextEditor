@@ -1,0 +1,41 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+    
+	<Button
+		android:id="@+id/layout_options_menu_open"
+		android:layout_width="match_parent"
+		android:layout_height="0dp"
+		android:layout_weight="1"
+		android:background="#ffffff"
+		android:text="打开"/>
+	<Button
+		android:layout_width="match_parent"
+		android:layout_height="0dp"
+
+		android:background="#ffffff"
+		android:layout_weight="1"
+		android:text="保存"/>
+	<Button
+		android:layout_width="match_parent"
+		android:layout_height="0dp"
+
+		android:background="#ffffff"
+		android:layout_weight="1"
+		android:text="另存"/>
+	<Button
+		android:layout_width="match_parent"
+		android:layout_height="0dp"
+
+		android:background="#ffffff"
+		android:layout_weight="1"
+		android:text="设置"/>
+	<Button
+		android:layout_width="match_parent"
+		android:layout_height="0dp"
+
+		android:background="#ffffff"
+		android:layout_weight="1"
+		android:text="退出"/>
+</LinearLayout>
