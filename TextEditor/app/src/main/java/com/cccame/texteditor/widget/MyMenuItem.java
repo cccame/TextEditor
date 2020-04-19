@@ -6,10 +6,11 @@ public class MyMenuItem
 	String mMenuItemName;
 	int mHeight;
 
-
 	int mMenuItemColor = Color.BLACK;
 	int mBackgroundColor = Color.WHITE;
 
+	MenuFrame subMenu = null;
+	
 	public MyMenuItem(String menuItemName, int height)
 	{
 		mMenuItemName = menuItemName;
@@ -34,4 +35,16 @@ public class MyMenuItem
 	}
 
 
+	public MyMenuItem setSubMenu(MenuFrame mf){
+		subMenu = mf;
+		return this;
+	}
+	
+	public MenuFrame getSubMenu(){
+		return subMenu;
+	}
+	
+	public boolean hasSubMenu(){
+		return subMenu != null;
+	}
 }

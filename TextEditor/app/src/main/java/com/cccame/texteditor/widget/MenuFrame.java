@@ -9,8 +9,14 @@ import android.widget.AdapterView.*;
 public class MenuFrame
 {
 	Context mContext;
-	int mWidth;
-	int mHeight;
+
+
+	private int left = 0;
+	private int top = 0;
+	private int right = 0;
+	private int bottom = 0;
+	private int mWidth = 0;
+	private int mHeight = 0;
 	WindowManager mWindowManager;
 
 	ListView mMenuListView;
@@ -18,6 +24,10 @@ public class MenuFrame
 	WindowManager.LayoutParams params;
 	ArrayList<MyMenuItem> mMenuItemList = new ArrayList<MyMenuItem>();;
 	boolean mMenuShowState = false;
+
+
+	int defaultMenuItemBackgroundColor = Color.WHITE;
+	int defaultMenuItemTextColor = Color.BLACK;
 
 	public MenuFrame(Context context, int width, int height)
 	{
@@ -27,6 +37,9 @@ public class MenuFrame
 		mWindowManager = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
 
 		mMenuListView = new ListView(context);
+		mMenuListView.setBackgroundColor(Color.WHITE);
+
+
 		// 必须设置FocusableInTouchMode为true，否则点击无反应
 		mMenuListView.setFocusableInTouchMode(true);
 		mMenuFrameAdapter = new MenuFrameAdapter();
@@ -47,6 +60,86 @@ public class MenuFrame
 
         params.x = 0;
         params.y = 0;
+
+	}
+
+	public MenuFrame getSubMenu(int pos)
+	{
+		MyMenuItem item = mMenuItemList.get(pos);
+		return item.getSubMenu();
+	}
+
+	public void setSubMenu(int pos, MenuFrame subMenu)
+	{
+		// TODO: Implement this method
+		mMenuItemList.get(pos).setSubMenu(subMenu);
+	}
+
+
+
+
+	public int getLeft()
+	{
+		return params.x;
+	}
+
+	public int getTop()
+	{
+		return params.y;
+	}
+
+
+	public int getRight()
+	{
+		return params.x + mWidth;
+	}
+
+	public int getBottom()
+	{
+		return params.y + mHeight;
+	}
+
+
+	public void setBackgroundColor(int pos, int color)
+	{
+		for (int i = 0;i < mMenuFrameAdapter.getCount();i++)
+		{
+			TextView tv = (TextView) mMenuListView.getChildAt(i);
+			tv.setBackgroundColor(defaultMenuItemBackgroundColor);
+		}
+		TextView tv = (TextView) mMenuListView.getChildAt(pos);
+		tv.setBackgroundColor(color);
+	}
+
+	public void setTextColor(int pos, int color)
+	{
+		for (int i = 0;i < mMenuFrameAdapter.getCount();i++)
+		{
+			TextView tv = (TextView) mMenuListView.getChildAt(i);
+			tv.setTextColor(defaultMenuItemTextColor);
+		}
+		TextView tv = (TextView) mMenuListView.getChildAt(pos);
+		tv.setTextColor(color);
+	}
+
+	public void setWidth(int mWidth)
+	{
+		this.mWidth = mWidth;
+	}
+
+	public int getWidth()
+	{
+		return mWidth;
+	}
+
+	public void setHeight(int mHeight)
+	{
+		this.mHeight = mHeight;
+	}
+
+	public int getHeight()
+	{
+		return mHeight;
 	}
 
 	public Context getContext()
@@ -79,13 +172,6 @@ public class MenuFrame
 
 	}
 
-
-	public void setGravity(int gravity)
-	{
-		params.gravity = gravity;
-		//mWindowManager.updateViewLayout(mMenuListView,params);
-	}
-
 	public void hide()
 	{
 		if (mMenuShowState == true)
@@ -115,7 +201,25 @@ public class MenuFrame
 		if (listener != null)
 			mMenuListView.setOnItemClickListener(listener);
 	}
+
+	/*
+	public void openSubMenu(int pos, int x, int y)
+	{
+		MyMenuItem item =  mMenuItemList.get(pos);
+		if (item.hasSubMenu())
+		{
+			item.getSubMenu().show(x, y);
+		}
+	}
 	
+
+	public void closeSubMenu(int pos)
+	{
+
+	}
+	
+	*/
+
 	class MenuFrameAdapter extends BaseAdapter
 	{
 
